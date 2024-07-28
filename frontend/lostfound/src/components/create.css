@@ -1,0 +1,43 @@
+/* create.css */
+
+.create-container {
+    max-width: 550px; /* Example: Adjust max-width as per your layout */
+    margin: 25px auto;
+     
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .create-container form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .create-container label {
+    margin-bottom: 8px;
+  }
+  
+  .create-container input[type="text"],
+  .create-container select,
+  .create-container textarea {
+    padding: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+    outline: none;
+  }
+  input:hover{
+    outline:1px solid silver;
+  }
+  
+  .create-container textarea {
+    resize: vertical; /* Allow vertical resizing of textarea */
+  }
+.create-container button:hover{
+    background: rgb(81, 156, 81);
+
+}  
