@@ -18,7 +18,7 @@ const uploadOnCloudinary = async (localFilePath) => {
             resource_type:"image",
             timeout:100000
         }
-        console.log(process.env.CLOUDINARY_API_KEY)
+        
         if (!localFilePath) return null
 
         console.log(localFilePath)
@@ -42,6 +42,7 @@ const deleteOnCloudinary= async(publicURL) =>{
             const response =await cloudinary.uploader.destroy(publicId, (result)=>{ console.log(result) });
         
             return response
+
     } catch (error) {
         return error
     }

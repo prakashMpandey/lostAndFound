@@ -213,6 +213,5 @@ export {
   loginUser,
   logOutUser,
   changePassword,
-  changeDetails,
-  addAndChangeAvatar,
+  changeDetails
 };
