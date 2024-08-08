@@ -2,12 +2,9 @@ import './App.css';
 import Signup from './components/signup.jsx';
 import Login from './components/login.jsx';
 import Navbar from './components/navbar.jsx';
-import Card from './components/card.jsx';
 import Home from './components/home.jsx';
-import Create from './components/create.jsx';
-
+import Create from './components/postCreate.jsx';
 import Search from './components/search.jsx';
-import Reply from './components/reply.jsx';
 import MyMessage from './components/myMessage.jsx';
 import Logout from './components/logout.jsx';
 import Footer from './components/footer.jsx';
@@ -15,7 +12,6 @@ import Error from './components/error.jsx';
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import { useAuth } from './store/auth.jsx';
 import Mypost from './components/mypost.jsx';
-import Forbidden from './components/forbidden.jsx';
 import { useEffect } from 'react';
 
 function App() {

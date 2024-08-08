@@ -6,7 +6,7 @@ const MyMessage = () => {
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(true); 
   const [userData, setUserData] = useState(); 
-  const [toShow, settoShow] = useState(false)
+ 
   const { getTokenFromLs,loggedInUser } = useAuth();
 
 const user= ()=>{

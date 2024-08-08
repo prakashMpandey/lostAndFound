@@ -193,50 +193,7 @@ const changeDetails = asyncHandler(async (req, res) => {
     throw new ApiError(500, "something went wrong");
   }
 });
-const addAndChangeAvatar = asyncHandler(async (req, res) => {
-  const avatarLocalPath = req.file?.avatar;
-  const existingAvatar = req.user.avatar;
 
-  if (!avatarLocalPath) {
-    throw new ApiError(400, "avatar is required");
-  }
-  if (existingAvatar != "") {
-    const avatar = await uploadOnCloudinary(avatarLocalPath);
-
-    if (!avatar.url) {
-      throw new ApiError(500, "internal server error");
-    }
-    console.log(avatar);
-
-    const user = await findByIdAndUpdate(
-      req.user._id,
-      { $set: { avatar: avatar?.url } },
-      { new: true, password: 0, refreshToken: 0 }
-    );
-
-    return res
-      .status(200)
-      .json(new ApiResponse(200, user, "avatar updated successfully"));
-  } else {
-    const avatar = await uploadOnCloudinary(avatarLocalPath);
-
-    if (!avatar.url) {
-      throw new ApiError(500, "internal server error");
-    }
-    console.log(avatar);
-
-    const user = await findByIdAndUpdate(
-      req.user._id,
-      { $set: { avatar: avatar?.url } },
-      { new: true, password: 0, refreshToken: 0 }
-    );
-
-    await deleteOnCloudinary(existingAvatar);
-    return res
-      .status(200)
-      .json(new ApiResponse(200, user, "avatar updated successfully"));
-  }
-});
 const deleteAccount = asyncHandler(async (req, res) => {
   console.res
     .status(200)

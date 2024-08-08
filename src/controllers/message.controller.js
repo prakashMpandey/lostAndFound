@@ -6,30 +6,8 @@ import { Message } from "../models/message.model.js"
 import {  uploadOnCloudinary } from "../utils/cloudinary.utils.js"
 import nodemailer from "nodemailer"
 import { User } from "../models/user.model.js"
-const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: 'prakashmanipandey685@gmail.com', 
-        pass: '' 
-    }
-});
-const sendEMail=async (to, subject, text)=>{
-    try {
-        const info={from: 'prakashmanipandey685@gmail.com', // Sender address
-        to: to, 
-        subject:"A new response received for your item",
-        text:"a new response for your posted item is received on lost and found.com ,you can have a look about it as soon as possible",
- }
-        
-        await transporter.sendMail(info)
 
-    
-    } 
-    catch (error) {
-        
-    }
 
-}
 const writeMessage=asyncHandler(async(req,res)=>{
    try{
     const { itemId, receiver } = req.params;

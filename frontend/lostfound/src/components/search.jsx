@@ -1,5 +1,5 @@
 import React from 'react'
-import Scard from './scard.jsx'
+import Scard from './searchCard.jsx'
 import { useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useAuth } from '../store/auth.jsx';
